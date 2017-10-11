@@ -16,6 +16,12 @@ Now you must have known what the function `COALESCE` does. So what `zero` does i
 
 Create a sample table at first:
 
+|  Field  |    Type      |  Null |
+| :-----: | :----------: | :---: |
+| id      | bigint(20)   |  NO   |
+| name    | varchar(255) |  NO   |
+| age     | int(10)      |  YES  |
+| sign_at | datetime     |  YES  |
 
 Let's show how use `zero` to work with a nullable field. Firstly we see the method call style:
 
