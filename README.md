@@ -12,9 +12,9 @@ And I first got the inspiration from [here](https://github.com/go-sql-driver/mys
 
 ## Usage
 
-Now you must have known what the function `COALESCE` does. So what `zero` does is simple, it helps you write `COALESCE` function calls.
+Now you must have known what the function `COALESCE` does, so what `zero` does is very simple, it just helps you write `COALESCE` function calls.
 
-Create a sample table at first:
+Let's create a sample table at first:
 
 | Field   |  Type        | Null  |
 | :-----  | :----------  | :---  |
@@ -24,7 +24,7 @@ Create a sample table at first:
 | sign_at | datetime     |  YES  |
 
 
-Let's show how use `zero` to work with a nullable field. Firstly we see the method call style:
+Then I show you how use `zero` to work with a nullable field in a method call style:
 
 ```go
 import (
