@@ -41,7 +41,7 @@ func main() {
 }
 ```
 
-here we create an object using the `New()` function.
+here we create an object using the `New()` function by passing a database name to it. Available database names're  `mysql`, `postgres` and `sqlite`(note: sqlite's Time() function is not usable at present).
 
 Of course you can call the equivalent function directly without creating an object:
 
