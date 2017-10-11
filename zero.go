@@ -43,6 +43,26 @@ func (n *Nullable) Time(field string) string {
 	return TimeAs(n.Database, field, field)
 }
 
+func (n *Nullable) StringAs(field, as string) string {
+	return StringAs(field, as)
+}
+
+func (n *Nullable) IntAs(field, as string) string {
+	return IntAs(field, as)
+}
+
+func (n *Nullable) FloatAs(field, as string) string {
+	return FloatAs(field, as)
+}
+
+func (n *Nullable) BoolAs(field, as string) string {
+	return BoolAs(field, as)
+}
+
+func (n *Nullable) TimeAs(field, as string) string {
+	return TimeAs(n.Database, field, as)
+}
+
 // String return converted SQL chunk for a nullable string typed field,
 // here the parameter "field" stands for field name
 func String(field string) string {
