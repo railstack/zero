@@ -55,9 +55,7 @@ func main() {
 but the function `DateTime()` is a little different due to it's database independent, so it need to pass the database name as the first parameter:
 
 ```go
-/* ... */
 zero.Time("mysql", "FEILD_NAME")
-/* ... */
 ```
 
 ## Functions avaliable
