@@ -4,9 +4,9 @@ Zero just provides some helpers for those Gophers prefer the `zero values` than 
 
 Zero's main idea is using a function `COALESCE` that most popular databases support, as:
 
-[SQLite](https://sqlite.org/lang_corefunc.html#coalesce)
-[MySQL](https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#function_coalesce)
-[PostgreSQL](https://www.postgresql.org/docs/current/static/functions-conditional.html#functions-coalesce-nvl-ifnull)
+* [SQLite](https://sqlite.org/lang_corefunc.html#coalesce)
+* [MySQL](https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#function_coalesce)
+* [PostgreSQL](https://www.postgresql.org/docs/current/static/functions-conditional.html#functions-coalesce-nvl-ifnull)
 
 And I first got the inspiration from [here](https://github.com/go-sql-driver/mysql/issues/34#issuecomment-158391340).
 
