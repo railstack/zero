@@ -24,7 +24,7 @@ Let's create a sample table at first:
 | sign_at | datetime     |  YES  |
 
 
-Then I show you how use `zero` to work with a nullable field in a method call style:
+Then I show you how to use `zero` to work with a nullable field in a method call style:
 
 ```go
 import (
