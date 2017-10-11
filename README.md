@@ -54,8 +54,8 @@ import (
 
 func main() {
     sql := fmt.Sprintf("SELECT id, name, %v FROM users", zero.Int("age"))
-    // here the "sql" will be `SELECT id, name, COALESCE(age, 0) AS age FROM users`
-    /* and then do a query with the "sql" %/
+    // here the "sql" = `SELECT id, name, COALESCE(age, 0) AS age FROM users`
+    // and then you can do a query with the "sql"
 }
 ```
 
