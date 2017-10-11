@@ -43,7 +43,7 @@ func main() {
 
 here we create an object using the `New()` function.
 
-Of course you can call the equivalent function without creating an object:
+Of course you can call the equivalent function directly without creating an object:
 
 ```go
 import (
