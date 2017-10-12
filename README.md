@@ -77,7 +77,7 @@ zero.Time("mysql", "FEILD_NAME")
 And for each of above there's a correnponding `TypeAs()` function that take another parameter as a `AS` alias name, for example:
 
 ```go
-zero.StringAs("name", "last_name") // will return: COALESCE(name, "") AS last_name
+zero.StringAs("name", "last_name") // will return: COALESCE(name, '') AS last_name
 ```
 
 (WIP)
