@@ -43,6 +43,15 @@ func (n *Nullable) Time(field string) string {
 	return TimeAs(n.Database, field, field)
 }
 
+func (n *Nullable) Inet(field string) string {
+	if n.Database != "postgres" {
+		return plainFormat(field, field)
+	}
+	return InetAs(field, field)
+}
+
+// -------------- TypeAs ----------------
+
 func (n *Nullable) StringAs(field, as string) string {
 	return StringAs(field, as)
 }
@@ -61,6 +70,13 @@ func (n *Nullable) BoolAs(field, as string) string {
 
 func (n *Nullable) TimeAs(field, as string) string {
 	return TimeAs(n.Database, field, as)
+}
+
+func (n *Nullable) InetAs(field, as string) string {
+	if n.Database != "postgres" {
+		return plainFormat(field, as)
+	}
+	return InetAs(field, as)
 }
 
 // String return converted SQL chunk for a nullable string typed field,
@@ -121,4 +137,14 @@ func TimeAs(database, field, as string) string {
 		return fmt.Sprintf("COALESCE(%v, (TIMESTAMP WITH TIME ZONE '0001-01-01 00:00:00+00') AT TIME ZONE 'UTC') AS %v", field, as)
 	}
 	return ""
+}
+
+// InetAs return converted SQL chunk for a nullable inet typed field only for the postgres
+func InetAs(field, as string) string {
+	return fmt.Sprintf("COALESCE(%v, '0.0.0.0') AS %v", field, as)
+}
+
+// plainFormat just format without coalesce
+func plainFormat(field, as string) string {
+	return fmt.Sprintf("%v AS %v", field, as)
 }
