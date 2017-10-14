@@ -76,6 +76,7 @@ func (n *Nullable) TimeAs(field, as string) string {
 
 func (n *Nullable) InetAs(field, as string) string {
 	if n.Database != "postgres" {
+		log.Println("zero: not postgres database to call Inet() method")
 		return plainFormat(field, as)
 	}
 	return InetAs(field, as)
