@@ -74,7 +74,15 @@ zero.Time("mysql", "FEILD_NAME")
 * `Time()` is for the `time.Time` typed variables
 
 
-And for each of above there's a correnponding `TypeAs()` function that take another parameter as a `AS` alias name, for example:
+And for each of above there's a correnponding `TypeAs()` function:
+
+* `StringAs()`
+* `IntAs()`
+* `FloatAs()`
+* `BoolAs()`
+* `TimeAs()`
+
+these functions take another parameter as a `AS` alias name, for example:
 
 ```go
 zero.StringAs("name", "last_name") // will return: COALESCE(name, '') AS last_name
