@@ -88,4 +88,8 @@ these functions take another parameter as a `AS` alias name, for example:
 zero.StringAs("name", "last_name") // will return: COALESCE(name, '') AS last_name
 ```
 
+And there're some database special functions, like:
+
+* `Inet()` and `InetAs()` are only available in `PostgreSQL`
+
 (WIP)
