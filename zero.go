@@ -2,6 +2,7 @@ package zero
 
 import (
 	"fmt"
+	"log"
 )
 
 var supportedDatabases = []string{"sqlite", "mysql", "postgres"}
@@ -18,7 +19,7 @@ func New(database string) *Nullable {
 		}
 	}
 	if !isSupported {
-		panic("not supported database")
+		log.Panic("zero: not supported database")
 	}
 	return &Nullable{Database: database}
 }
@@ -45,6 +46,7 @@ func (n *Nullable) Time(field string) string {
 
 func (n *Nullable) Inet(field string) string {
 	if n.Database != "postgres" {
+		log.Println("zero: not postgres database to call Inet() method")
 		return plainFormat(field, field)
 	}
 	return InetAs(field, field)
@@ -135,8 +137,12 @@ func TimeAs(database, field, as string) string {
 		return fmt.Sprintf("COALESCE(%v, CONVERT_TZ('0001-01-01 00:00:00','+00:00','UTC')) AS %v", field, as)
 	case "postgres":
 		return fmt.Sprintf("COALESCE(%v, (TIMESTAMP WITH TIME ZONE '0001-01-01 00:00:00+00') AT TIME ZONE 'UTC') AS %v", field, as)
+		// FIXME: no idea for sqlite at present
+	case "sqlite":
+		return plainFormat(field, as)
 	}
-	return ""
+	log.Println("zero: this database is not supported or wrong input")
+	return plainFormat(field, as)
 }
 
 // InetAs return converted SQL chunk for a nullable inet typed field only for the postgres
