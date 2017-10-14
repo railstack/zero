@@ -46,8 +46,7 @@ func (n *Nullable) Time(field string) string {
 
 func (n *Nullable) Inet(field string) string {
 	if n.Database != "postgres" {
-		log.Println("zero: not postgres database to call Inet() method")
-		return plainFormat(field, field)
+		log.Panic("zero: not postgres database to call Inet() method")
 	}
 	return InetAs(field, field)
 }
@@ -76,8 +75,7 @@ func (n *Nullable) TimeAs(field, as string) string {
 
 func (n *Nullable) InetAs(field, as string) string {
 	if n.Database != "postgres" {
-		log.Println("zero: not postgres database to call Inet() method")
-		return plainFormat(field, as)
+		log.Panic("zero: not postgres database to call Inet() method")
 	}
 	return InetAs(field, as)
 }
@@ -147,6 +145,7 @@ func TimeAs(database, field, as string) string {
 }
 
 // InetAs return converted SQL chunk for a nullable inet typed field only for the postgres
+// Not pass a database name in for checking, hesitate to change it as a private function. It's up to users at present.
 func InetAs(field, as string) string {
 	return fmt.Sprintf("COALESCE(%v, '0.0.0.0') AS %v", field, as)
 }
