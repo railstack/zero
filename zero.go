@@ -107,6 +107,12 @@ func Time(database, field string) string {
 	return TimeAs(database, field, field)
 }
 
+// Inet return converted SQL chunk for a nullable inet typed field,
+// and this function is only available for postgres
+func Inet(field string) string {
+	return InetAs(field, field)
+}
+
 // StringAs return converted SQL chunk for a nullable string typed field
 // here the parameter "field" stands for field name
 func StringAs(field, as string) string {
