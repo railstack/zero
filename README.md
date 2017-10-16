@@ -74,7 +74,7 @@ zero.Time("mysql", "sign_at")
 
 Now available databases are: `mysql`, `postgres` and `sqlite`.
 
-Note: If you want to use the solution for `sqlite`, you must use a forked version of [go-sqlite](https://github.com/goonr/go-sqlite3). And this version still has some potential problems as discussed at: https://github.com/mattn/go-sqlite3/pull/468, so it's up to you as a choice.
+Note: If you want to use the solution for `sqlite`, you must use a forked version of [mattn/go-sqlite3](https://github.com/goonr/go-sqlite3). And this version still has some potential problems as discussed at: https://github.com/mattn/go-sqlite3/pull/468, so it's up to you as a choice.
 
 ## Functions avaliable
 
