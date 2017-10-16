@@ -141,7 +141,7 @@ func TimeAs(database, field, as string) string {
 	case "sqlite":
 		return fmt.Sprintf("CAST(COALESCE(%v, '0001-01-01T00:00:00Z') as text) AS %v", field, as)
 	}
-	log.Fatal("zero: this database is not supported or wrong input")
+	log.Fatal("zero: not supported database or wrong input")
 	return ""
 }
 
