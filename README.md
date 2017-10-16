@@ -34,7 +34,7 @@ import (
 
 
 func main() {
-    zr := zero.New("mysql") // or "postgres"
+    zr := zero.New("mysql") // or "postgres", "sqlite"
     sql := fmt.Sprintf("SELECT id, name, %v FROM users", zr.Int("age"))
     // here the "sql" = `SELECT id, name, COALESCE(age, 0) AS age FROM users`
     // and then you can do a query with the "sql"
@@ -59,15 +59,22 @@ func main() {
 }
 ```
 
-but the function `Time()` is a little bit different due to it's database independent, so it need to pass the database name as the first parameter:
+but the function `Time()` is a little bit different due to it's database independent, so it'll be called in the method way:
 
 ```go
-zero.Time("mysql", "FEILD_NAME")
+zr := zero.New("mysql")
+zr.Time("sign_at")
+```
+
+Or function way by passing the database name as the first parameter:
+
+```go
+zero.Time("mysql", "sign_at")
 ```
 
 Now available databases are: `mysql`, `postgres` and `sqlite`.
 
-Note: If you want to use the solution for `sqlite`, you must use a forked version of go-sqlite: https://github.com/goonr/go-sqlite3. And this version still has some potential problem as discussed at: https://github.com/mattn/go-sqlite3/pull/468, so it's up to you as a choice.
+Note: If you want to use the solution for `sqlite`, you must use a forked version of [go-sqlite](https://github.com/goonr/go-sqlite3). And this version still has some potential problems as discussed at: https://github.com/mattn/go-sqlite3/pull/468, so it's up to you as a choice.
 
 ## Functions avaliable
 
