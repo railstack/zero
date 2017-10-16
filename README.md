@@ -65,6 +65,10 @@ but the function `Time()` is a little bit different due to it's database indepen
 zero.Time("mysql", "FEILD_NAME")
 ```
 
+Now available databases are: `mysql`, `postgres` and `sqlite`.
+
+Note: If you want to use the solution for `sqlite`, you must use a forked version of go-sqlite: https://github.com/goonr/go-sqlite3. And this version still has some potential problem as discussed at: https://github.com/mattn/go-sqlite3/pull/468, so it's up to you as a choice.
+
 ## Functions avaliable
 
 * `String()` is for string type variables in Go
