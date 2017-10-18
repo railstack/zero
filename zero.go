@@ -88,7 +88,7 @@ func String(field string) string {
 
 // Int return converted SQL chunk for a nullable int* typed field
 func Int(field string) string {
-	return FloatAs(field, field)
+	return IntAs(field, field)
 }
 
 // Float return converted SQL chunk for a nullable float* typed field
