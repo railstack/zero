@@ -45,7 +45,7 @@ func main() {
 }
 ```
 
-here we create an object using the `New()` function by passing a database name to it. Available database names're  `mysql`, `postgres` and `sqlite`(note: sqlite's Time() function depends on a forked version of [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3), and here is [why we use this forked version](https://github.com/mattn/go-sqlite3/pull/468)).
+here we create an object using the `New()` function by passing a database name to it. Available database names're  `mysql`, `postgres` and `sqlite`.
 
 Of course you can call the equivalent function directly without creating an object:
 
