@@ -16,7 +16,7 @@ And I first got the inspiration from [here](https://github.com/go-sql-driver/mys
 
 Now you must have known what the function `COALESCE` does, so what `zero` does is very simple, it just helps you write `COALESCE` function calls.
 
-Let's create a sample table at first:
+Let's create a sample table `users` at first:
 
 | Field   |  Type        | Null  |
 | :-----  | :----------  | :---  |
@@ -43,7 +43,7 @@ func main() {
 }
 ```
 
-here we create an object using the `New()` function by passing a database name to it. Available database names're  `mysql`, `postgres` and `sqlite`(note: sqlite's Time() function is not usable at present).
+here we create an object using the `New()` function by passing a database name to it. Available database names're  `mysql`, `postgres` and `sqlite`(note: sqlite's Time() function is dependent on a forked version of [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3), and here is [why we use this forked version](https://github.com/mattn/go-sqlite3/pull/468)).
 
 Of course you can call the equivalent function directly without creating an object:
 
@@ -105,4 +105,5 @@ And there're some database special functions, like:
 
 * `Inet()` and `InetAs()` are only available in `PostgreSQL`
 
-(WIP)
+You can check all the available functions in the [godoc](https://godoc.org/github.com/goonr/zero).
+
