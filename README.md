@@ -1,6 +1,8 @@
-[![GoDoc](https://godoc.org/github.com/goonr/zero?status.svg)](https://godoc.org/github.com/goonr/zero)
 
 # Zero
+
+[![GoDoc](https://godoc.org/github.com/goonr/zero?status.svg)](https://godoc.org/github.com/goonr/zero)
+[![Build Status](https://travis-ci.org/goonr/zero.svg?branch=master)](https://travis-ci.org/goonr/zero)
 
 Zero just provides some helpers for those Gophers prefer the `zero values` than touching the `sql.Null*` types when you have to work with some database tables with nullable fields.
 
