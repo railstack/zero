@@ -142,7 +142,7 @@ func TimeAs(database, field, as string) string {
 		return fmt.Sprintf("COALESCE(%v, CONVERT_TZ('0001-01-01 00:00:00','+00:00','UTC')) AS %v", field, as)
 	case "postgres":
 		return fmt.Sprintf("COALESCE(%v, (TIMESTAMP WITH TIME ZONE '0001-01-01 00:00:00+00') AT TIME ZONE 'UTC') AS %v", field, as)
-		// FIXME: if you want to use the solution below, you must use a forked version of go-sqlite: https://github.com/goonr/go-sqlite3
+		// FIXME: if you want to use the solution below, you must use a forked version of go-sqlite: https://github.com/railstack/go-sqlite3
 		// And this version still has some potential problem as discussed at: https://github.com/mattn/go-sqlite3/pull/468, so it's up to you
 	case "sqlite":
 		return fmt.Sprintf("CAST(COALESCE(%v, '0001-01-01T00:00:00Z') as text) AS %v", field, as)

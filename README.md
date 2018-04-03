@@ -1,8 +1,8 @@
 
 # Zero
 
-[![GoDoc](https://godoc.org/github.com/goonr/zero?status.svg)](https://godoc.org/github.com/goonr/zero)
-[![Build Status](https://travis-ci.org/goonr/zero.svg?branch=master)](https://travis-ci.org/goonr/zero)
+[![GoDoc](https://godoc.org/github.com/railstack/zero?status.svg)](https://godoc.org/github.com/railstack/zero)
+[![Build Status](https://travis-ci.org/railstack/zero.svg?branch=master)](https://travis-ci.org/railstack/zero)
 
 Zero just provides some helpers for those Gophers prefer the `zero values` than touching the `sql.Null*` types when you have to work with some database tables with nullable fields.
 
@@ -33,7 +33,7 @@ Then I show you how to use `zero` to work with a nullable field in a method call
 ```go
 import (
     "fmt"
-    "github.com/goonr/zero"
+    "github.com/railstack/zero"
 )
 
 
@@ -52,7 +52,7 @@ Of course you can call the equivalent function directly without creating an obje
 ```go
 import (
     "fmt"
-    "github.com/goonr/zero"
+    "github.com/railstack/zero"
 )
 
 
@@ -78,7 +78,7 @@ zero.Time("mysql", "sign_at")
 
 Now available databases are: `mysql`, `postgres` and `sqlite`.
 
-Note: If you want to use the solution for `sqlite`, you must use a forked version of the driver [mattn/go-sqlite3](https://github.com/goonr/go-sqlite3). And this version still has some potential problems as discussed at: https://github.com/mattn/go-sqlite3/pull/468, so it's up to you as a choice.
+Note: If you want to use the solution for `sqlite`, you must use a forked version of the driver [mattn/go-sqlite3](https://github.com/railstack/go-sqlite3). And this version still has some potential problems as discussed at: https://github.com/mattn/go-sqlite3/pull/468, so it's up to you as a choice.
 
 ## Functions avaliable
 
@@ -107,5 +107,5 @@ And there're some database special functions, like:
 
 * `Inet()` and `InetAs()` are only available in `PostgreSQL`
 
-You can check all the available functions in the [godoc](https://godoc.org/github.com/goonr/zero).
+You can check all the available functions in the [godoc](https://godoc.org/github.com/railstack/zero).
 
